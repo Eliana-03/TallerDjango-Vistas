@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1d9a3221-6183-4de0-a3e1-f80a0e0a3c17",
+		"_postman_id": "19286da9-1040-4ebd-bb58-b007f852444d",
 		"name": "Monitoring",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24782220"
 	},
 	"item": [
 		{
@@ -97,6 +98,97 @@
 			]
 		},
 		{
+			"name": "Create Measurement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\": 3,\r\n    \"value\": 12.12,\r\n    \"unit\": \"Celsius\",\r\n    \"place\": \"Bogota\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Measurement",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variable\": 3,\r\n    \"value\": 12.12,\r\n    \"unit\": \"Celsius\",\r\n    \"place\": \"Bogota\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 02:15:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 1,\n        \"fields\": {\n            \"variable\": 2,\n            \"value\": 12.12,\n            \"unit\": \"Celsius\",\n            \"place\": \"Bogota\",\n            \"dateTime\": \"2023-02-13T02:15:59.705Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
 			"name": "Retrive Variables",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -114,19 +206,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}:{{port}}{{api_path}}/variables?id=3",
+					"raw": "{{host}}:{{port}}{{api_path}}/variables",
 					"host": [
 						"{{host}}"
 					],
 					"port": "{{port}}{{api_path}}",
 					"path": [
 						"variables"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "3"
-						}
 					]
 				}
 			},
@@ -136,15 +222,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{host}}:{{port}}{{api_path}}/variables",
 							"host": [
@@ -204,15 +281,6 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{host}}:{{port}}{{api_path}}/variables?id=3",
 							"host": [
@@ -360,6 +428,165 @@
 			]
 		},
 		{
+			"name": "Update Measurement",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"variable\": 3,\r\n    \"value\": 13.13,\r\n    \"unit\": \"Mana\",\r\n    \"place\": \"Grieta del Invocador\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/3",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Measurement",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variable\": 3,\r\n    \"value\": 13.13,\r\n    \"unit\": \"Mana\",\r\n    \"place\": \"Grieta del Invocador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/1",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 03:24:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 1,\n        \"fields\": {\n            \"variable\": 3,\n            \"value\": 13.13,\n            \"unit\": \"Mana\",\n            \"place\": \"Grieta del Invocador\",\n            \"dateTime\": \"2023-02-13T02:15:59.705Z\"\n        }\n    }\n]"
+				},
+				{
+					"name": "Update Measurement query",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variable\": 3,\r\n    \"value\": 13.13,\r\n    \"unit\": \"Mana\",\r\n    \"place\": \"Grieta del Invocador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/?id=1",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 03:26:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 1,\n        \"fields\": {\n            \"variable\": 3,\n            \"value\": 13.13,\n            \"unit\": \"Mana\",\n            \"place\": \"Grieta del Invocador\",\n            \"dateTime\": \"2023-02-13T02:15:59.705Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
 			"name": "Retrive Variable",
 			"request": {
 				"method": "GET",
@@ -429,6 +656,270 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"model\": \"variables.variable\",\n        \"pk\": 3,\n        \"fields\": {\n            \"name\": \"New Var\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrive Measurements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Retrive Measurement",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/2",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 03:55:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 2,\n        \"fields\": {\n            \"variable\": 3,\n            \"value\": 12.12,\n            \"unit\": \"Celsius\",\n            \"place\": \"Bogota\",\n            \"dateTime\": \"2023-02-13T03:50:44.466Z\"\n        }\n    }\n]"
+				},
+				{
+					"name": "Retrive Measurements",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 03:56:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "349"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 1,\n        \"fields\": {\n            \"variable\": 3,\n            \"value\": 13.13,\n            \"unit\": \"Mana\",\n            \"place\": \"Grieta del Invocador\",\n            \"dateTime\": \"2023-02-13T02:15:59.705Z\"\n        }\n    },\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 2,\n        \"fields\": {\n            \"variable\": 3,\n            \"value\": 12.12,\n            \"unit\": \"Celsius\",\n            \"place\": \"Bogota\",\n            \"dateTime\": \"2023-02-13T03:50:44.466Z\"\n        }\n    }\n]"
+				},
+				{
+					"name": "Retrive Measurement With Query",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/?id=2",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 03:57:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"model\": \"measurements.measurement\",\n        \"pk\": 2,\n        \"fields\": {\n            \"variable\": 3,\n            \"value\": 12.12,\n            \"unit\": \"Celsius\",\n            \"place\": \"Bogota\",\n            \"dateTime\": \"2023-02-13T03:50:44.466Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Measurement",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}:{{port}}{{api_path}}/measurements/1",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}{{api_path}}",
+					"path": [
+						"measurements",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Measurement",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}{{api_path}}/measurements/?id=5",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}{{api_path}}",
+							"path": [
+								"measurements",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 13 Feb 2023 04:13:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/text"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "Measurement Deleted"
 				}
 			]
 		}
